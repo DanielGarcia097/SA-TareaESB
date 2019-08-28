@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:Cliente="http://Cliente" xmlns:ESB="http://ESB" xmlns:Piloto="http://Piloto" xmlns:Rastreo="http://Rastreo">
+  <process name="ESB:ESB">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="ESB:ESBService" port="ESBPort"/>
+    </provide>
+    <invoke partnerLink="ClientePL">
+      <service name="Cliente:ClienteService" port="ClientePort"/>
+    </invoke>
+    <invoke partnerLink="RasteroPL">
+      <service name="Rastreo:RastreoService" port="RastreoPort"/>
+    </invoke>
+    <invoke partnerLink="PilotoPL">
+      <service name="Piloto:PilotoService" port="PilotoPort"/>
+    </invoke>
+  </process>
+</deploy>

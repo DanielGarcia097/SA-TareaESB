@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:Cliente="http://Cliente">
+  <process name="Cliente:Cliente">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="Cliente:ClienteService" port="ClientePort"/>
+    </provide>
+  </process>
+</deploy>
